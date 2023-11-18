@@ -1,0 +1,27 @@
+[
+    {
+        "weekday": "SUN",
+        "condition": "cloudy",
+        "temperature": 28
+    },
+    {
+        "weekday": "MON",
+        "condition": "moonCloudyRain",
+        "temperature": 30
+    },
+    {
+        "weekday": "TUE",
+        "condition": "moon",
+        "temperature": 36
+    },
+    {
+        "weekday": "WED",
+        "condition": "moon",
+        "temperature": 39
+    },
+    {
+        "weekday": "THU",
+        "condition": "storm",
+        "temperature": 26
+    }
+]

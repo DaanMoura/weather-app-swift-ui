@@ -11,6 +11,14 @@
 		200B062D2AFC649D00618DF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B062C2AFC649D00618DF1 /* ContentView.swift */; };
 		200B062F2AFC649F00618DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200B062E2AFC649F00618DF1 /* Assets.xcassets */; };
 		200B06322AFC649F00618DF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200B06312AFC649F00618DF1 /* Preview Assets.xcassets */; };
+		2070FDB22B0862D400916900 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070FDB12B0862D400916900 /* ModelData.swift */; };
+		2070FDB42B08633A00916900 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070FDB32B08633A00916900 /* Weather.swift */; };
+		2070FDB62B0863B500916900 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070FDB52B0863B500916900 /* WeatherCondition.swift */; };
+		2070FDB82B0866FF00916900 /* WeekdayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070FDB72B0866FF00916900 /* WeekdayWeather.swift */; };
+		2070FDBF2B086D0500916900 /* night_weekdays.json in Resources */ = {isa = PBXBuildFile; fileRef = 2070FDBB2B086D0500916900 /* night_weekdays.json */; };
+		2070FDC02B086D0500916900 /* day_weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 2070FDBC2B086D0500916900 /* day_weather.json */; };
+		2070FDC12B086D0500916900 /* day_weekdays.json in Resources */ = {isa = PBXBuildFile; fileRef = 2070FDBD2B086D0500916900 /* day_weekdays.json */; };
+		2070FDC22B086D0500916900 /* night_weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 2070FDBE2B086D0500916900 /* night_weather.json */; };
 		209EA8DC2B052A6F00AC8C1F /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EA8DB2B052A6F00AC8C1F /* WeatherButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +28,14 @@
 		200B062C2AFC649D00618DF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		200B062E2AFC649F00618DF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		200B06312AFC649F00618DF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2070FDB12B0862D400916900 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		2070FDB32B08633A00916900 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		2070FDB52B0863B500916900 /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
+		2070FDB72B0866FF00916900 /* WeekdayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayWeather.swift; sourceTree = "<group>"; };
+		2070FDBB2B086D0500916900 /* night_weekdays.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = night_weekdays.json; sourceTree = "<group>"; };
+		2070FDBC2B086D0500916900 /* day_weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day_weather.json; sourceTree = "<group>"; };
+		2070FDBD2B086D0500916900 /* day_weekdays.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day_weekdays.json; sourceTree = "<group>"; };
+		2070FDBE2B086D0500916900 /* night_weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = night_weather.json; sourceTree = "<group>"; };
 		209EA8DB2B052A6F00AC8C1F /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,11 +69,12 @@
 		200B06292AFC649D00618DF1 /* SwiftUI-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				2070FDBA2B086AC400916900 /* Resources */,
+				2070FDB02B08627E00916900 /* Model */,
+				2070FDAF2B08626A00916900 /* Views */,
 				200B062A2AFC649D00618DF1 /* SwiftUI_WeatherApp.swift */,
-				200B062C2AFC649D00618DF1 /* ContentView.swift */,
 				200B062E2AFC649F00618DF1 /* Assets.xcassets */,
 				200B06302AFC649F00618DF1 /* Preview Content */,
-				209EA8DB2B052A6F00AC8C1F /* WeatherButton.swift */,
 			);
 			path = "SwiftUI-Weather";
 			sourceTree = "<group>";
@@ -68,6 +85,37 @@
 				200B06312AFC649F00618DF1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2070FDAF2B08626A00916900 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				200B062C2AFC649D00618DF1 /* ContentView.swift */,
+				209EA8DB2B052A6F00AC8C1F /* WeatherButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2070FDB02B08627E00916900 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2070FDB12B0862D400916900 /* ModelData.swift */,
+				2070FDB32B08633A00916900 /* Weather.swift */,
+				2070FDB52B0863B500916900 /* WeatherCondition.swift */,
+				2070FDB72B0866FF00916900 /* WeekdayWeather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2070FDBA2B086AC400916900 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2070FDBC2B086D0500916900 /* day_weather.json */,
+				2070FDBD2B086D0500916900 /* day_weekdays.json */,
+				2070FDBE2B086D0500916900 /* night_weather.json */,
+				2070FDBB2B086D0500916900 /* night_weekdays.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +176,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2070FDBF2B086D0500916900 /* night_weekdays.json in Resources */,
+				2070FDC02B086D0500916900 /* day_weather.json in Resources */,
 				200B06322AFC649F00618DF1 /* Preview Assets.xcassets in Resources */,
 				200B062F2AFC649F00618DF1 /* Assets.xcassets in Resources */,
+				2070FDC12B086D0500916900 /* day_weekdays.json in Resources */,
+				2070FDC22B086D0500916900 /* night_weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				200B062D2AFC649D00618DF1 /* ContentView.swift in Sources */,
+				2070FDB22B0862D400916900 /* ModelData.swift in Sources */,
+				2070FDB82B0866FF00916900 /* WeekdayWeather.swift in Sources */,
 				200B062B2AFC649D00618DF1 /* SwiftUI_WeatherApp.swift in Sources */,
 				209EA8DC2B052A6F00AC8C1F /* WeatherButton.swift in Sources */,
+				2070FDB62B0863B500916900 /* WeatherCondition.swift in Sources */,
+				2070FDB42B08633A00916900 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

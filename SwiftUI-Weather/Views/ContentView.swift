@@ -8,32 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var modelData: ModelData
     
     @State private var isNight = false
+    
+    private var weather: Weather {
+        isNight ? modelData.nightWeather : modelData.dayWeather
+    }
+    
+    private var weekdays: [WeekdayWeather] {
+        isNight ? modelData.nightWeekdaysWeather : modelData.dayWeekdaysWeather
+    }
     
     var body: some View {
         ZStack {
             BackgroundView(isNight: $isNight)
             VStack {
-                CityTextView(cityName: "São Paulo, SP")
+                CityTextView(cityName: weather.city)
                 
-                MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 36)
+                MainWeatherStatusView(imageName: weather.icon, temperature: weather.temperature)
                 HStack(spacing: 20) {
-                    WheaterDayView(dayOfWeek: "TUE", 
-                                   imageName: isNight ?  "cloud.moon.rain.fill" : "cloud.sun.rain.fill",
-                                   temperature: 33)
-                    WheaterDayView(dayOfWeek: "WED", 
-                                   imageName: isNight ? "cloud.fill" : "cloud.fill",
-                                   temperature: 30)
-                    WheaterDayView(dayOfWeek: "THU", 
-                                   imageName: isNight ? "cloud.moon.fill" : "cloud.sun.fill",
-                                   temperature: 34)
-                    WheaterDayView(dayOfWeek: "FRI", 
-                                   imageName: isNight ? "cloud.moon.bolt.fill" :  "sun.max.fill",
-                                   temperature: 38)
-                    WheaterDayView(dayOfWeek: "SAT", 
-                                   imageName: isNight ? "moon.fill" :  "sun.max.fill",
-                                   temperature: 37)
+                    ForEach(weekdays) { day in
+                        WheaterDayView(dayOfWeek: day.weekday,
+                                       imageName: day.icon,
+                                       temperature: day.temperature)
+                    }
                 }
                 Spacer()
                 Button{
@@ -54,6 +53,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(ModelData())
 }
 
 struct WheaterDayView: View {
@@ -82,7 +82,7 @@ struct BackgroundView: View {
     @Binding var isNight: Bool
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: isNight ? [.black, .gray] : [.blue,Color("lightBlue")]),
+        LinearGradient(gradient: Gradient(colors: isNight ? [.black, Color("darkBlue")] : [.blue,Color("lightBlue")]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
